@@ -1,0 +1,39 @@
+:host {
+    margin: 20px;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .highcharts-figure .chart-container {
+    width: 300px;
+    height: 200px;
+    float: left;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    cursor: pointer;
+    background-color: #08c;
+    margin-bottom: 5px;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  li.disabled {
+    cursor: default;
+    background-color: #eee;
+    color: #212121;
+  }
+  
+ 

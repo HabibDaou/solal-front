@@ -1,0 +1,36 @@
+<p>image works!</p>
+        <h1>uploadFile</h1>
+<input name ="file" type="file" (change)="onFileSelected($event)"> 
+<button name ="button" type="button" (click)="onUpload()"> Uppload</button>
+
+<!-- <img [src]="imageToShow"
+     alt="Place image title"
+     *ngIf="!isImageLoading; else noImageFound">
+<ng-template #noImageFound>
+     <img src="fallbackImage.png" alt="Fallbackimage">
+</ng-template> -->
+
+
+
+        <!-- <p>
+         <input name ="file" type="file" (change)="onFileSelected($event)"> 
+         <button name ="button" type="button" (click)="onUpload()"> Uppload</button>
+         <img [src]="imageToShow"
+         alt="Place image title"
+         *ngIf="!isImageLoading; else noImageFound">
+      <ng-template #noImageFound>
+         <img src="fallbackImage.png" alt="Fallbackimage">
+      </ng-template> 
+      </p> -->
+      <!--  
+        <div formArrayName="items"
+        *ngFor="let item of orderForm.get('items')['controls']; let i = index;">
+        <div [formGroupName]="i">
+          <form [formGroup]="item1">
+          <input formControlName="name" placeholder="Item name">
+          <input formControlName="description" placeholder="Item description">
+          <input formControlName="price" placeholder="Item price">
+        </form>
+        </div>
+           </div>
+       -->

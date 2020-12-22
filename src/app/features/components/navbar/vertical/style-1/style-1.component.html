@@ -1,0 +1,165 @@
+<div class="navbar-top"  style="background-color:#2f9be5 !important ;">
+
+    <div class="logo">
+        <img class="logo-icon" src="assets/images/logos/fuse.svg">
+        <span class="logo-text secondary-text">FUSE</span>
+    </div>
+
+    <div class="buttons">
+
+        <button mat-icon-button class="toggle-sidebar-folded"
+                (click)="toggleSidebarFolded()" fxHide.lt-lg>
+            <mat-icon class="secondary-text">menu</mat-icon>
+        </button>
+
+        <button mat-icon-button class="toggle-sidebar-opened"
+                (click)="toggleSidebarOpened()" fxHide.gt-md>
+            <mat-icon class="secondary-text">arrow_back</mat-icon>
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="navbar-scroll-container"  style="background-color: white !important ;"
+     fusePerfectScrollbar [fusePerfectScrollbarOptions]="{suppressScrollX: true}">
+
+    <div class="user" fxLayout="column"  style="background-color:#2f9be5 !important ;">
+
+        <div class="h3 username">{{user?.firstName}} {{user?.lastName}}</div>
+        <div class="h5 email hint-text mt-8">{{user?.email}}</div>
+        <div class="avatar-container" [ngClass]="fuseConfig.layout.navbar.primaryBackground">
+            <img 
+            class="avatar"
+                    [src]="imageToShow"
+                       alt="Place image title"
+                       *ngIf="!isImageLoading; else noImageFound"
+                    >
+                       <ng-template #noImageFound>
+                           
+                  <img src="../../../../assets/images/avatars/default.jpg" alt="Fallbackimage" 
+                  class="avatar">
+                    </ng-template>
+        </div>
+
+    </div>
+
+    <div *ngIf="isAdmin" class="navbar-content" >
+        <div class="nav">
+            <div class="nav-item">
+                <a class="nav-link" routerLink="home">
+                    <mat-icon class="nav-link-icon">home</mat-icon>
+                    <span class="nav-link-title">Home</span>
+                </a>
+                <a class="nav-link" routerLink="custumers">
+                    <mat-icon class="nav-link-icon">group</mat-icon>
+                    <span class="nav-link-title">Custumers</span>
+                </a>
+                <a class="nav-link" routerLink="stations">
+                    <mat-icon class="nav-link-icon">business</mat-icon>
+                    <span class="nav-link-title">Station de service</span>
+                </a>
+
+                <a class="nav-link" routerLink="custumers/profile">
+                    <mat-icon class="nav-link-icon">perm_identity</mat-icon>
+                    <span class="nav-link-title">Profile</span>
+                </a>
+                <a class="nav-link" routerLink="ravitaillement">
+                    <mat-icon class="nav-link-icon">local_gas_station</mat-icon>
+                    <span class="nav-link-title">Ravitaillement</span>
+                </a>
+                <a class="nav-link" routerLink="alerts">
+                    <mat-icon class="nav-link-icon">notification_important</mat-icon>
+                    <span class="nav-link-title">Alerts</span>
+                </a>
+                <a class="nav-link" routerLink="indexs">
+                    <mat-icon class="nav-link-icon">event_note</mat-icon>
+                    <span class="nav-link-title">Indexs</span>
+                </a>
+                <a class="nav-link" routerLink="vente">
+                    <mat-icon class="nav-link-icon">edit</mat-icon>
+                    <span class="nav-link-title">Vente</span>
+                </a>
+                <a class="nav-link" routerLink="venteHistorique">
+                    <mat-icon class="nav-link-icon">business</mat-icon>
+                    <span class="nav-link-title">Historique Ventes</span>
+                </a>
+                <a class="nav-link" routerLink="predict">
+                    <mat-icon class="nav-link-icon">business</mat-icon>
+                    <span class="nav-link-title">Prédiction</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="isUser" class="navbar-content" >
+        <div class="nav">
+            <div class="nav-item">
+                <a class="nav-link" routerLink="home">
+                    <mat-icon class="nav-link-icon">home</mat-icon>
+                    <span class="nav-link-title">Home</span>
+                </a>
+                <a class="nav-link" routerLink="stations">
+                    <mat-icon class="nav-link-icon">business</mat-icon>
+                    <span class="nav-link-title">Station de service</span>
+                </a>
+                <a class="nav-link" routerLink="custumers/profile">
+                    <mat-icon class="nav-link-icon">perm_identity</mat-icon>
+                    <span class="nav-link-title">Profile</span>
+                </a>
+                <a class="nav-link" routerLink="indexs">
+                    <mat-icon class="nav-link-icon">edit</mat-icon>
+                    <span class="nav-link-title">indexs</span>
+                </a>
+                <a class="nav-link" routerLink="ravitaillement">
+                    <mat-icon class="nav-link-icon">edit</mat-icon>
+                    <span class="nav-link-title">Ravitaillement</span>
+                </a>
+                <a class="nav-link" routerLink="alerts">
+                    <mat-icon class="nav-link-icon">notification_important</mat-icon>
+                    <span class="nav-link-title">Alerts</span>
+                </a>
+                <a class="nav-link" routerLink="vente">
+                    <mat-icon class="nav-link-icon">edit</mat-icon>
+                    <span class="nav-link-title">Vente</span>
+                </a>
+                <a class="nav-link" routerLink="venteHistorique">
+                    <mat-icon class="nav-link-icon">business</mat-icon>
+                    <span class="nav-link-title">Historique Ventes</span>
+                </a>
+                <a class="nav-link" routerLink="predict">
+                    <mat-icon class="nav-link-icon">business</mat-icon>
+                    <span class="nav-link-title">Prédiction</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="isEmployee" class="navbar-content" >
+        <div class="nav">
+            <div class="nav-item">
+                <a class="nav-link" routerLink="home">
+                    <mat-icon class="nav-link-icon">home</mat-icon>
+                    <span class="nav-link-title">Home</span>
+                </a>
+                <a class="nav-link" routerLink="indexs">
+                    <mat-icon class="nav-link-icon">edit</mat-icon>
+                    <span class="nav-link-title">indexs</span>
+                </a>
+
+                <a class="nav-link" routerLink="custumers/profile">
+                    <mat-icon class="nav-link-icon">perm_identity</mat-icon>
+                    <span class="nav-link-title">Profile</span>
+                </a>
+                <a class="nav-link" routerLink="alerts">
+                    <mat-icon class="nav-link-icon">notification_important</mat-icon>
+                    <span class="nav-link-title">Alerts</span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+
+
+</div>
