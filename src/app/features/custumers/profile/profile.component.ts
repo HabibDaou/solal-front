@@ -107,6 +107,7 @@ getImageFromService(user : any) {
 }
 getImage(user :any): Observable<Blob> {
     return this.http.get(
+        
         "http://localhost:3000/uploads/image/"+user.imageUrl,
         { responseType: "blob" }
     );

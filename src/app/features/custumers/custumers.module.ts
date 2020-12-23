@@ -32,10 +32,10 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { UserModalComponent } from './shared/Modals/user-modal/user-modal.component';
 import { ChampListComponent } from './champ-list/champ-list.component';
 import { ChampModalComponent } from './shared/champ-modal/champ-modal.component';
-
+import { ProfileComponent } from "./profile/profile.component";
 @NgModule({
     declarations: [
-        
+    ProfileComponent,    
     UsersListComponent,
         
     UserModalComponent,
