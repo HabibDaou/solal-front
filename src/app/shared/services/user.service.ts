@@ -39,7 +39,17 @@ export class UserService {
     getuserByid(id: number): Observable<any> {
         return this.http.get<any[]>(`${APIS.USERS}/${id}`);
     }
+    getEmployees(id : any): Observable<any> {
 
+        return this.http.get<any>(`${APIS.USERS}/entreprise/${id}`);
+    }
+    AddEmployee(user: any,id : any): Observable<any> {
+
+        return this.http.post<any>(
+            `${APIS.USERS}/entreprise/${id}`,
+            user
+        );
+    }
     getuser(): Observable<any> {
         return this.http.get<any[]>(`${APIS.USERS}/me`);
     }

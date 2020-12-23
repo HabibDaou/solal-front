@@ -212,7 +212,7 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
                 this.isImageLoading = false;
             },
             (error) => {
-                              console.log(error);
+             console.log(error);
             }
         );
     }

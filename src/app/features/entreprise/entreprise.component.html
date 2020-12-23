@@ -1,0 +1,50 @@
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+
+
+<div *ngFor="let e of entreprise">
+<div class="styleWidget">
+<fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+<!-- Front -->
+<div class="fuse-widget-front">
+<div class="pl-16 pr-8 py-16 h-52" fxLayout="row"
+fxLayoutAlign="space-between center">
+<div class="h3">{{e.label}} , {{e.adresse}} </div>
+
+<button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+       aria-label="more">
+   <mat-icon>more_vert</mat-icon>
+</button>
+</div>
+
+<div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+<div class="red-fg font-size-72 line-height-72">
+  <img src="../../../assets/images/logos/station-essence.jpg">
+</div>
+<div class="h3 secondary-text font-weight-500">
+</div>
+</div>
+
+<div class="p-16 border-top" fxLayout="row" fxLayoutAlign="start center">
+<span class="h4 secondary-text text-truncate">
+  Zip Code
+</span>
+<span class="h4 ml-8">{{e.label}}</span>
+<button mat-stroked-button color="primary"  [routerLink]="['/features/entreprise/Employee',e._id]">Manage Employees </button>
+
+</div>
+</div>
+<!-- / Front -->
+
+
+</fuse-widget>
+</div>
+</div>
+
+
+
+
+<div class="header" id="map">
+    
+</div>
