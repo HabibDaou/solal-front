@@ -33,16 +33,19 @@ import { UserModalComponent } from './shared/Modals/user-modal/user-modal.compon
 import { ChampListComponent } from './champ-list/champ-list.component';
 import { ChampModalComponent } from './shared/champ-modal/champ-modal.component';
 import { ProfileComponent } from "./profile/profile.component";
+import { EntrepriseListComponent } from './entreprise-list/entreprise-list.component';
+import { EntrepriseModalComponent } from './shared/entreprise-modal/entreprise-modal.component';
+import { ChangePasswordComponent } from "../authentication/change-password/change-password.component";
 @NgModule({
     declarations: [
     ProfileComponent,    
     UsersListComponent,
-        
     UserModalComponent,
-        
     ChampListComponent,
-        
-    ChampModalComponent],
+    ChampModalComponent,
+    EntrepriseListComponent,
+    ChangePasswordComponent,
+    EntrepriseModalComponent],
     imports: [
         HttpClientModule,
         ConfirmationModalModule,

@@ -10,15 +10,8 @@ import { ToastService } from 'app/shared/services/toast.service';
     templateUrl: "./home.component.html",
     styleUrls: ["./home.component.scss"],
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
 
-    stations: any[];
-    tanks: any[];
-
-    stateCtrl = new FormControl();
-    filteredStates: Observable<any[]>;
-    checked = false;
-    subscription: Subscription;
 
     ngOnInit(): void {
     }
@@ -27,23 +20,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       
         private toastService: ToastService
     ) {
-        this.filteredStates = this.stateCtrl.valueChanges.pipe(
-            startWith(""),
-            map((state) =>
-                state ? this._filterStates(state) : this.stations.slice()
-            )
-        );
+        
     }
-    ngOnDestroy(): void {
-        // this.subscription.unsubscribe();
-    }
-
-    private _filterStates(value: string): any[] {
-        const filterValue = value.toLowerCase();
-        return this.stations.filter(
-            (state) => state.city.toLowerCase().indexOf(filterValue) === 0
-        );
-    }
+    
+    
 
  
 

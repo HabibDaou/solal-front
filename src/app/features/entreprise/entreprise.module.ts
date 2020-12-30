@@ -30,10 +30,11 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { FuseSharedModule } from '../../../@fuse/shared.module';
 import { FuseSidebarModule, FuseWidgetModule } from '../../../@fuse/components';
 import { MatDialogModule } from '@angular/material/dialog';
+import { EntrepriseComponent } from './entreprise.component';
 
 
 @NgModule({
-  declarations: [EmployeListEntrepriseComponent, EmployeModalComponent, MapComponent],
+  declarations: [EmployeListEntrepriseComponent, EmployeModalComponent, MapComponent,EntrepriseComponent],
   imports: [
     CommonModule,
     EntrepriseRoutingModule,

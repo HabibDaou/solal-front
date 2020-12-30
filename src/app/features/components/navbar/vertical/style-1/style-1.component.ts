@@ -25,6 +25,7 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
     fuseConfig: any;
     navigation: any;
     user: any;
+    isEntreprise=false;
     isAdmin=false;
     isUser =false;
     image: any = null;
@@ -179,6 +180,9 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
         }
         if(data.Role =="EMPLOYEE"){
             this.isEmployee=true
+        }
+        if(data.Role =="ENTREPRISE"){
+            this.isEntreprise=true;
         }
         this.getImageFromService(data);
 

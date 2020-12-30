@@ -59,6 +59,7 @@ export class ForgetPasswordFormComponent implements OnInit {
     console.log(this.forgotPasswordForm.value.email);
 
     this.userservice.sendEmail(this.forgotPasswordForm.value).subscribe(res => {
+      console.log(res);
       this.toastService.success("Email Sent", "Sucess");
       this.router.navigate(['/authentication/login']);
       console.log(res);

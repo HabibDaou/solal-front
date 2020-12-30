@@ -29,7 +29,16 @@ export class Entrepriseservice {
     delete(id: any): Observable<any> {
         return this.http.delete(`${APIS.ENTREPRISE}/${id}`);
     }
-
+    AddEntrepriseTouser(id: any, entreprise: any): Observable<any> {
+        return this.http.post<any>(
+            `${APIS.ENTREPRISE}/entreprise`,
+            { id, entreprise }
+        );
+    }
+    getEntrepriseByuser(id: any): Observable<any>  {
+        return this.http.get<any>(`${APIS.ENTREPRISE}/getEntreprise/${id}`);
+    }
+  
 
 }
 

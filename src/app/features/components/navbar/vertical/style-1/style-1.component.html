@@ -64,11 +64,33 @@
                     <mat-icon class="nav-link-icon">group</mat-icon>
                     <span class="nav-link-title">Entreprise</span>
                 </a>
-                
+                <a class="nav-link" url="../../../../marker-training/examples/generator.html">
+                    <mat-icon class="nav-link-icon">group</mat-icon>
+                    <span class="nav-link-title">Converteur</span>
+                </a>
             </div>
         </div>
     </div>
-
+    <div *ngIf="isEntreprise" class="navbar-content" >
+        <div class="nav">
+            <div class="nav-item">
+                <a class="nav-link" routerLink="home">
+                    <mat-icon class="nav-link-icon">home</mat-icon>
+                    <span class="nav-link-title">Home</span>
+                </a>
+            
+                <a class="nav-link" routerLink="custumers/profile">
+                    <mat-icon class="nav-link-icon">group</mat-icon>
+                    <span class="nav-link-title">Profile</span>
+                </a>
+                <a class="nav-link" routerLink="entreprise">
+                    <mat-icon class="nav-link-icon">group</mat-icon>
+                    <span class="nav-link-title">Entreprise</span>
+                </a>
+               
+            </div>
+        </div>
+    </div>
     <div *ngIf="isUser" class="navbar-content" >
         <div class="nav">
             <div class="nav-item">
